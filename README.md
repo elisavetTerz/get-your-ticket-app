@@ -1,6 +1,6 @@
 ## Angular Steps
 
-## Βήμα 1: Install Angular Materilas
+## Step 1: Install Angular Materilas
 
 - Εγκατάσταση του Angular Material και του Angular CDK:
  
