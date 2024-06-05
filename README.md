@@ -1,5 +1,20 @@
 ## Angular Steps
 
+## Βήμα 3: Component list-group-item: Fancy App Menu με το [list-group](https://t.ly/vmYc2) του Bootstrap
+ 
+- Δημιουργία νέου interface `MenuItem` στο αρχείο `shared/interfaces/menu-item.ts`:
+ 
+  ```typescript  export interface MenuItem {    text: string; // Κείμενο που εμφανίζεται στο μενού    routerLink: string; // Το path που αντιστοιχεί στο component  }  ```
+ 
+- Δημιουργία του component `ListGroupMenuComponent` με την εντολή:
+ 
+  ```bash  ng g c components/list-group-menu  ```
+ 
+- To μενού της εφαρμογής μας είναι ένας πίνακας αντικειμένων `MenuEntry`:
+ 
+  ```typescript  menu: MenuEntry[] = [    { text: 'Component Input Example', routerLink: 'component-input-example' },    { text: '@for Directive Example', routerLink: 'for-directive-example' },    { text: 'Event Bind Example', routerLink: 'event-bind-example' },  ];  ```
+
+
 ## Step 2: Δημιουργία νέου component
  
 - Δημιουργία ενός νέου component με την εντολή `ng generate component components/navbar`.- Μεταφορά του πίνακα από το `app.component.html` στο template του νέου component.- Συμπερίληψη της κλάσης `NavbarComponent` στον πίνακα `imports` στην αρχικοποίηση του decorator στο αρχείο `app.component.ts`.- Χρήση του νέου component στο template του `app.component.html` με την ετικέτα `<app-navbar></app-navbar>`.
