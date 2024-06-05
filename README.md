@@ -1,5 +1,9 @@
 ## Angular Steps
 
+## Step 2: Δημιουργία νέου component
+ 
+- Δημιουργία ενός νέου component με την εντολή `ng generate component components/navbar`.- Μεταφορά του πίνακα από το `app.component.html` στο template του νέου component.- Συμπερίληψη της κλάσης `NavbarComponent` στον πίνακα `imports` στην αρχικοποίηση του decorator στο αρχείο `app.component.ts`.- Χρήση του νέου component στο template του `app.component.html` με την ετικέτα `<app-navbar></app-navbar>`.
+
 ## Step 1: Install Angular Materilas
 
 - Εγκατάσταση του Angular Material και του Angular CDK:
