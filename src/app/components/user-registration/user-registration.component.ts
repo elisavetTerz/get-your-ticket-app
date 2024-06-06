@@ -33,9 +33,10 @@ export class UserRegistrationComponent {
 
   form = new FormGroup(
     {
-      givenName: new FormControl('', Validators.required),
-      surName: new FormControl('', Validators.required),
+      firstname: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
+      username: new FormControl('', [Validators.required]),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
@@ -64,11 +65,11 @@ export class UserRegistrationComponent {
 
     this.userService.registerUser(user).subscribe({
       next: (response) => {
-        console.log('User registered', response.msg);
-        this.registrationStatus = { success: true, message: response.msg };
+        console.log('User registered', response.message);
+        this.registrationStatus = { success: true, message: response.message };
       },
       error: (response) => {
-        const message = response.error.msg;
+        const message = response.error.message;
         console.log('Error registering user', message);
         this.registrationStatus = { success: false, message };
       },
@@ -85,11 +86,11 @@ export class UserRegistrationComponent {
 
     this.userService.check_duplicate_email(email).subscribe({
       next: (response) => {
-        console.log(response.msg);
+        console.log(response.message);
         this.form.get('email').setErrors(null);
       },
       error: (response) => {
-        const message = response.error.msg;
+        const message = response.error.message;
         console.log(message);
         this.form.get('email').setErrors({ duplicateEmail: true });
       },

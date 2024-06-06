@@ -11,10 +11,10 @@ import { RouterLink } from '@angular/router';
 })
 export class NavbarComponent {
   userService = inject(UserService);
-  user = this.userService.user;
+  //user = this.userService.user;
 
-  logout() {
-    this.userService.logoutUser();
-  }
+  // logout() {
+  //   this.userService.logoutUser();
+  // }
 
 }
