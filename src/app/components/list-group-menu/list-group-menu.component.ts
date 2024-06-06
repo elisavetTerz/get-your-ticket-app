@@ -16,18 +16,17 @@ export class ListGroupMenuComponent {
       routerLink: 'theatre-shows',
     },
     {
-      text: 'HTTP Client Example',
-      routerLink: 'http-client-example',
+      text: 'Buy Tickets',
+      routerLink: 'buy-tickets',
     },
     {
-      text: 'User Registration Example',
-      routerLink: 'user-registration-example'
+      text: 'User Registration',
+      routerLink: 'user-registration'
     },
-    // {
-    //   text: 'Restricted Content Example', 
-    //   routerLink: 'restricted-content-example'
-    // },
-    //{ text: 'CRUD Example', routerLink: 'crud-example' },
+    {
+      text: 'User Login', 
+      routerLink: 'user-login'
+    },
   ];
 }
 
