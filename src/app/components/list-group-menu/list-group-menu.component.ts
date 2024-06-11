@@ -11,14 +11,10 @@ import { MenuItem } from 'src/app/shared/interfaces/menu-item';
 })
 export class ListGroupMenuComponent {
   menu: MenuItem[] = [
-    // {
-    //   text: 'Theatre Shows',
-    //   routerLink: 'theatre-shows',
-    // },
-    // {
-    //   text: 'Buy Tickets',
-    //   routerLink: 'buy-tickets',
-    // },
+    {
+      text: 'Theatre Shows',
+      routerLink: 'event-shows',
+    },
     {
       text: 'User Registration',
       routerLink: 'user-registration'
@@ -27,6 +23,14 @@ export class ListGroupMenuComponent {
     //   text: 'User Login', 
     //   routerLink: 'user-login'
     // },
+    {
+      text: 'User Page', 
+      routerLink: 'user-page'
+    },
+    {
+      text: 'Buy Tickets',
+      routerLink: 'buy-tickets',
+    },
   ];
 }
 
