@@ -24,7 +24,7 @@
         <mat-error>Last Name is required</mat-error>
       }
     </mat-form-field>
-    <mat-form-field>
+    <!-- <mat-form-field>
       <mat-label>Email</mat-label>
       <input
         matInput
@@ -37,6 +37,16 @@
         @if (form.get("email").invalid && form.get("email").touched) {
           <mat-error>Email is missing or invalid</mat-error>
         }
+      }
+    </mat-form-field> -->
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="email" />
+      @if (form.get("email").invalid && form.get("email").touched) {
+        <mat-error>Email is missing or invalid</mat-error>
       }
     </mat-form-field>
     <mat-form-field>

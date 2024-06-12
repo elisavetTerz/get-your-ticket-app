@@ -36,14 +36,14 @@ export class UserRegistrationComponent {
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      username: new FormControl('', [Validators.required]),
+      username: new FormControl('', Validators.required),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(4),
       ]),
       confirmPassword: new FormControl('', [
         Validators.required,
-        Validators.minLength(4),
+        Validators.minLength(6),
       ]),
     },
     this.passwordConfirmValidator,
@@ -81,19 +81,19 @@ export class UserRegistrationComponent {
     this.registrationStatus = { success: false, message: 'Not attempted yet' };
   }
 
-  check_duplicate_email() {
-    const email = this.form.get('email').value;
+  // check_duplicate_email() {
+  //   const email = this.form.get('email').value;
 
-    this.userService.check_duplicate_email(email).subscribe({
-      next: (response) => {
-        console.log(response.message);
-        this.form.get('email').setErrors(null);
-      },
-      error: (response) => {
-        const message = response.error.message;
-        console.log(message);
-        this.form.get('email').setErrors({ duplicateEmail: true });
-      },
-    });
-  }
+  //   this.userService.check_duplicate_email(email).subscribe({
+  //     next: (response) => {
+  //       console.log(response.message);
+  //       this.form.get('email').setErrors(null);
+  //     },
+  //     error: (response) => {
+  //       const message = response.error.message;
+  //       console.log(message);
+  //       this.form.get('email').setErrors({ duplicateEmail: true });
+  //     },
+  //   });
+  //}
 }

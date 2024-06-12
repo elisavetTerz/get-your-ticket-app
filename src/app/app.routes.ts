@@ -22,7 +22,7 @@ export const routes: Routes = [
     component: UserPageComponent,
     canActivate: [authGuard],
   },
-  // { path: '', redirectTo: '/today-shows', pathMatch: 'full' },
+  { path: '', redirectTo: '/today-shows', pathMatch: 'full' },
   // { path: 'today-shows', component: TodayShowsComponent },
   // { path: 'login', component: LoginComponent },
   // { path: 'register', component: RegisterComponent },
