@@ -42,7 +42,7 @@ export class UserLoginComponent {
           email: decodedTokenSubject.email,
         });
 
-        this.router.navigate(['app-user-page']);
+        this.router.navigate(['user-page']);
       },
       error: (response) => {
         console.error('Login Error', response);

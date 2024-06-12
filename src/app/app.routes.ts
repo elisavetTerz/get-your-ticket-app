@@ -24,8 +24,6 @@ export const routes: Routes = [
   },
   // { path: '', redirectTo: '/today-shows', pathMatch: 'full' },
   // { path: 'today-shows', component: TodayShowsComponent },
-  // { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
   // { path: 'shows', component: ShowsComponent },
   // { path: 'cart', component: CartComponent },
   // { path: 'ticket-purchase', component: TicketPurchaseComponent }

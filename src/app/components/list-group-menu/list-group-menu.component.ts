@@ -16,20 +16,20 @@ export class ListGroupMenuComponent {
       routerLink: 'event-shows',
     },
     {
-      text: 'User Registration',
-      routerLink: 'user-registration'
+      text: 'Buy Tickets',
+      routerLink: 'buy-tickets',
+    },
+    {
+      text: 'User Page', 
+      routerLink: 'user-page'
     },
     // {
     //   text: 'User Login', 
     //   routerLink: 'user-login'
     // },
     {
-      text: 'User Page', 
-      routerLink: 'user-page'
-    },
-    {
-      text: 'Buy Tickets',
-      routerLink: 'buy-tickets',
+      text: 'User Registration',
+      routerLink: 'user-registration'
     },
   ];
 }
