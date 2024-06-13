@@ -3,7 +3,6 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { authGuard } from './shared/guards/auth.guard';
-import { PopularEventsComponent } from './components/popular-events/popular-events.component';
 import { AllEventsComponent } from './components/all-events/all-events.component';
 // import { CartComponent } from './cart/cart.component';
 // import { TicketPurchaseComponent } from './ticket-purchase/ticket-purchase.component';
@@ -23,7 +22,6 @@ export const routes: Routes = [
     canActivate: [authGuard],
   },
   { path: '', redirectTo: '/popular-events', pathMatch: 'full' },
-  { path: 'popular-events', component: PopularEventsComponent },
   { path: 'events', component: AllEventsComponent },
   // { path: 'cart', component: CartComponent },
   // { path: 'ticket-purchase', component: TicketPurchaseComponent }
