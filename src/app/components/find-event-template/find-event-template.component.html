@@ -1,0 +1,39 @@
+<div class="d-flex flex-column">
+    <div class="d-flex flex-column">
+        <!-- <h5>Find Event</h5> -->
+        
+        <form #form="ngForm" class="d-flex flex-column" (ngSubmit)="onSubmit(form.value)">
+          <mat-radio-group [(ngModel)]="searchType" (change)="changeType()" name="searchType" class="mb-3">
+            <mat-radio-button value="title">Search by Title</mat-radio-button>
+            <mat-radio-button value="date">Search by Date</mat-radio-button>
+          </mat-radio-group>
+          
+        @if (searchType === 'title'){
+          <mat-form-field>
+            <mat-label>Event Name</mat-label>
+            <input matInput ngModel required type="text" name="title" #title="ngModel" />
+            @if (title.invalid && title.touched) {
+              <mat-error> Event Name is required </mat-error>
+            }
+          </mat-form-field>
+        }
+         
+        @if (searchType === 'date'){
+          <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" ngModel name="date" #date="ngModel" required />  
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (date.invalid && date.touched) {
+              <mat-error>Date is required</mat-error>
+            }
+          </mat-form-field>
+        } 
+          <button mat-flat-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
+        </form>
+      </div>
+  
+  </div>

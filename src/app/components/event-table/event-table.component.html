@@ -1,0 +1,33 @@
+<table class="table table-bordered table-striped text-wrap">
+    <thead>
+      <tr class="align-middle text-center small">
+        <th role="button" (click)="sortData('title')">
+          Title {{ sortSign("title") }}
+        </th>
+        <th class="d-none d-lg-table-cell">Description</th>
+        <th>Duration in Minutes</th>
+        <th role="button" (click)="sortData('date')">
+          Date {{ sortSign("date") }}
+        </th>
+        <th role="button" (click)="sortData('startTime')">
+          Start time {{ sortSign("startTime") }}
+        </th>
+        <th role="button" (click)="sortData('availableSeats')">
+          available seats {{ sortSign("availableSeats") }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of events; track row) {
+        <tr class="align-middle" (click)="onRowClick(row)">
+          <td lass="d-none d-lg-table-cell">{{ row.title }}</td>
+          <td class="d-none d-lg-table-cell">{{ row.description }}</td>
+          <td lass="d-none d-lg-table-cell">{{ row.durationMinutes }}</td>
+          <td>{{ row.date }}</td>
+          <td >{{ row.startTime }}</td>
+          <td class="d-none d-lg-table-cell">{{ row.availableSeats }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  

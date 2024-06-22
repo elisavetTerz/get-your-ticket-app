@@ -4,8 +4,9 @@ import { environment } from 'src/environments/environment';
 import { Credentials, LoggedInUser, User } from '../interfaces/user';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
+import { Observable } from 'rxjs';
 
-const API_URL = `${environment.apiURL}/users`;
+const API_URL = `${environment.apiURL}/api`;
 
 @Injectable({
   providedIn: 'root',
@@ -23,13 +24,13 @@ export class UserService {
       const decodedTokenSubject = jwtDecode(access_token)
       .sub as unknown as LoggedInUser;
       this.user.set({
-        username: decodedTokenSubject.username,
-        email: decodedTokenSubject.email,
+        username: decodedTokenSubject as any,
+        //email: decodedTokenSubject.email,
       })
     }
 
     effect(() => {
-      if (this.user()) {
+      if (this.user) {
         console.log('User logged in', this.user().username);
       } else {
         console.log('No user Logged In');
@@ -37,8 +38,10 @@ export class UserService {
     });
   }
 
-  registerUser(user: User) {
-    return this.http.post<{ message: string }>(`${API_URL}/register`, user);
+  registerUser(user: User): Observable<any> {
+    return this.http.post(`${API_URL}/users/register`, user, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    });
   }
 
   check_duplicate_email(email: string) {
@@ -49,7 +52,7 @@ export class UserService {
 
   loginUser(credentials: Credentials) {
     return this.http.post<{ access_token: string }>(
-      `${API_URL}/login`,
+      `${API_URL}/auth/login`,
       credentials,
     );
   }

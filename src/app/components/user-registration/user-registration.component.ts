@@ -33,15 +33,13 @@ export class UserRegistrationComponent {
 
   form = new FormGroup(
     {
-      firstname: new FormControl('', Validators.required),
-      lastname: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', [
+      email: new FormControl('theo@gmail.com', [Validators.required, Validators.email]),
+      username: new FormControl('theohahiho', Validators.required),
+      password: new FormControl('123456', [
         Validators.required,
         Validators.minLength(4),
       ]),
-      confirmPassword: new FormControl('', [
+      confirmPassword: new FormControl('123456', [
         Validators.required,
         Validators.minLength(6),
       ]),
@@ -52,9 +50,11 @@ export class UserRegistrationComponent {
   passwordConfirmValidator(form: FormGroup) {
     if (form.get('password').value !== form.get('confirmPassword').value) {
       form.get('confirmPassword').setErrors({ passwordMismatch: true });
-      return { passwordMismatch: true };
+      //return { passwordMismatch: true };
+    } else {
+      form.get('confirmPassword').setErrors(null);
     }
-    return {};
+    return null;
   }
 
   onSubmit(value: any) {

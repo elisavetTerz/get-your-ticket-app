@@ -24,8 +24,8 @@ export class UserLoginComponent {
   invalidLogin = false;
 
   form = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+    username: new FormControl('theohahiho', Validators.required),
+    password: new FormControl('123456', Validators.required),
   });
 
   onSubmit() {
@@ -38,11 +38,11 @@ export class UserLoginComponent {
           .sub as unknown as LoggedInUser;
 
         this.userService.user.set({
-          username: decodedTokenSubject.username,
-          email: decodedTokenSubject.email,
+          username: decodedTokenSubject as any,
+          //email: decodedTokenSubject.email,
         });
 
-        this.router.navigate(['app-user-page']);
+        this.router.navigate(['user-page']);
       },
       error: (response) => {
         console.error('Login Error', response);

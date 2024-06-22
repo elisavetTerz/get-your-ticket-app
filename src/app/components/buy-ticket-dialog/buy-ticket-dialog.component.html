@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Buy Ticket</h1>
+<div mat-dialog-content>
+  <p>Do you want to buy a ticket for {{ data.title }}?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onBuyClick()">
+    <mat-icon>add</mat-icon> Buy Ticket
+  </button>
+  <button mat-button (click)="onNoClick()">
+    <mat-icon>close</mat-icon> Close
+  </button>
+</div>

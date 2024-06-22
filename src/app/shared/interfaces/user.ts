@@ -1,6 +1,4 @@
 export interface User {
-  firstname: string;
-  lastname: string;
   email: string;
   password: string;
   username: string;
@@ -14,5 +12,5 @@ export interface Credentials {
 
 export interface LoggedInUser {
   username: string;
-  email: string;
+  //email: string;
 }

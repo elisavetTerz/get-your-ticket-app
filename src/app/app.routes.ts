@@ -1,12 +1,13 @@
 import { Routes } from '@angular/router';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { UserLoginComponent } from './components/user-login/user-login.component';
-import { UserPageComponent } from './components/user-page/user-page.component';
 import { authGuard } from './shared/guards/auth.guard';
-// import { TodayShowsComponent } from './today-shows/today-shows.component';
-// import { ShowsComponent } from './shows/shows.component';
-// import { CartComponent } from './cart/cart.component';
-// import { TicketPurchaseComponent } from './ticket-purchase/ticket-purchase.component';
+import { ListGroupMenuComponent } from './components/list-group-menu/list-group-menu.component';
+import { EventTableComponent } from './components/event-table/event-table.component';
+import { UserPageComponent } from './components/user-page/user-page.component';
+import { BuyTicketComponent } from './components/buy-ticket/buy-ticket.component';
+import { FindEventTemplateComponent } from './components/find-event-template/find-event-template.component';
+
 
 export const routes: Routes = [
   {
@@ -22,12 +23,20 @@ export const routes: Routes = [
     component: UserPageComponent,
     canActivate: [authGuard],
   },
-  { path: '', redirectTo: '/today-shows', pathMatch: 'full' },
-  // { path: 'today-shows', component: TodayShowsComponent },
-  // { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
-  // { path: 'shows', component: ShowsComponent },
-  // { path: 'cart', component: CartComponent },
-  // { path: 'ticket-purchase', component: TicketPurchaseComponent }
+  { path: 'app-list-group-menu', component: ListGroupMenuComponent },
+  {
+    path: 'event-shows',
+    component: EventTableComponent,
+    // canActivate: [authGuard],
+  },
+  {
+    path: 'buy-tickets',
+    component: BuyTicketComponent,
+  },
+  {
+    path: 'find-events',
+    component: FindEventTemplateComponent,
+  },
+  
 ];
 
